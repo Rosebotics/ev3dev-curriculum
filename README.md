@@ -8,27 +8,32 @@ discussed in the **Background information**. Once all the setup is done (by an i
  - [Instructor pre-class setup](https://drive.google.com/open?id=1jNlT9JKff3p9TyrDQwF3XjakaLEp_ilD1wNaHr7c67o)
   
   ### Introductory material
+  Set up your computer to communicate with the EV3 robot and get an overview of the robot capabilities.
   - [Installing PyCharm Professional](https://drive.google.com/open?id=1MXThtuT79o6_SmovrWtPNulhi423kdGGDxMsu7LZXt4)
   - [Robot Overview](https://drive.google.com/open?id=17xGhRQt3VTX3Ltg_2FE2_aC7nSCNqHZzLzyaS6N8Yb4)
   - [Git Setup](https://drive.google.com/open?id=12pTxnipJExUwPePExfMmDJIu1Yi-nSzfA7sVh1mHTg4)
   - [Connecting from PyCharm to EV3](https://drive.google.com/open?id=15cYiil-p30to6tcTKZdxGlgHFTFg8EivHJV6Z-Om64s)
    
-  ### Motor Drive
+  ### Drive Motors
+  Learn to move the robot around.  Movement is a good first step with mobile robotics.
   - [Lecture slides](https://drive.google.com/open?id=1rjkOZNw0mO0pH7Ovhy-7riYG3Xa4xq4rKbwMPhDppJs)
   - [Starting code (link to a specific folder in this repository)](https://github.com/Rosebotics/ev3dev-curriculum/tree/master/sandbox/src/motors)
   - [Checkoff sheet](https://drive.google.com/open?id=14_BQghdiRCOzJ5V_edXhcmaZFhH1qzkzL2u50uH6_o0)
 
   ### Digital Inputs (and a few other things)
+  Learn about the EV3 buttons, IR remote, and touch sensor (the digital inputs) plus a few other things.
   - [Lecture slides](https://drive.google.com/open?id=1mUxsC-cUO4S5bwhTAQG0G10IO0gsbAU5YEORxeh0mMc)
   - [Starting code (link to a specific folder in this repository)](https://github.com/Rosebotics/ev3dev-curriculum/tree/master/sandbox/src/digital_inputs)
   - [Checkoff sheet](https://drive.google.com/open?id=1jrrmd-c1ZuWV1qujV8d-H327HWFmADSCdm9wgafYQ8M)
 
   ### MQTT Communication
+  Now it's time to get serious. Use your computer to control the robot from a graphical user interface.
   - [Lecture slides](https://drive.google.com/open?id=1gQt1K4X2xzcspKMn2S0X98vhzVNmLA-xoQe5rp58CVE)
   - [Starting code (link to a specific folder in this repository)](https://github.com/Rosebotics/ev3dev-curriculum/tree/master/sandbox/src/mqtt)
   - [Checkoff sheet](https://drive.google.com/open?id=1f83A70S_OA6eor-Ta9HsM40V9qwOVa12JU_e0qaujm4)
 
   ### Analog Sensor
+  Learn to use the color sensor, infrared sensor, and Pixy camera.
   - [Lecture slides](https://drive.google.com/open?id=1U00IlFqIT_S2v9HV-TKSO6Y6foH4sDom9yytsV_PWfY)
   - [Starting code (link to a specific folder in this repository)](https://github.com/Rosebotics/ev3dev-curriculum/tree/master/sandbox/src/analog_sensors)
   - [Checkoff sheet](https://drive.google.com/open?id=1J5Is9eiEueDT-mcJAhQSatzsXma4JVPaU4a7vXlkXAc)
