@@ -79,10 +79,11 @@ this repository begins.
   The purpose of this repository is to share the work we’ve done at Rose-Hulman to use ev3dev in the classroom.  We’ve setup a series of exercises for students to learn the Python ev3dev API.  Instructors at other schools can use any amount of our content in their own course or simply review our work as inspiration.
   
 This repository is broken into different folders that each have a different purpose:
+- `assets` - Sound and image files. These assets are used in various modules throughout the curriculum.
 - `examples` - Finished examples that can be run to demo different robot features. Reference the code in this folder when doing your own work. 
 - `libs` - A special folder that will contain modules that are available to all other modules. Students will be given an mqtt module and will be expected to build their own robot controller module.
-- `sandbox` - This folder has 5 subfolders that all start out identical.  Each identical subfolder is for 1 team member to work individually while learning ev3dev and while doing initial development in a contained environment for their work.
 - `project` - This folder is for the course final project code. Students should create a self-selected project that demonstrates their understanding of ev3-python.  The goal is to have a little fun and have a little freedom to pick a project that is interesting to you.
+- `sandbox` - This folder has 5 subfolders that all start out identical.  Each identical subfolder is for 1 team member to work individually while learning ev3dev. This folder contains 24 individual programming challenges that you will work as you complete this curriculum.
 
 ## Learning Objectives
 At the end of this curriculum a student should be able to…
