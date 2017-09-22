@@ -35,18 +35,17 @@ def main():
     shutdown(left_motor, right_motor)
 
 
-if __name__ == '__main__':
-    def drive_straight(left_motor, right_motor, time_s):
-        """Shows an example of using run_forever at a given speed."""
-        print("Driving straight...")
-        left_motor.run_forever(speed_sp=400)
-        right_motor.run_forever(speed_sp=400)
-        time.sleep(time_s)
-        left_motor.stop(stop_action="brake")
-        right_motor.stop(stop_action="brake")
-        # This solution uses run_forever then a time delay there is also a run_timed method
-        # that could've been used instead if control needs to be returned immediately
-        # Typically the solution above is the more common drive pattern.
+def drive_straight(left_motor, right_motor, time_s):
+    """Shows an example of using run_forever at a given speed."""
+    print("Driving straight...")
+    left_motor.run_forever(speed_sp=400)
+    right_motor.run_forever(speed_sp=400)
+    time.sleep(time_s)
+    left_motor.stop(stop_action="brake")
+    right_motor.stop(stop_action="brake")
+    # This solution uses run_forever then a time delay there is also a run_timed method
+    # that could've been used instead if control needs to be returned immediately
+    # Typically the solution above is the more common drive pattern.
 
 
 def turn_90(left_motor, right_motor):
