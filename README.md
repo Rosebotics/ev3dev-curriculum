@@ -3,16 +3,14 @@ College curriculum for using ev3dev in a Python programming course.
 ***
 This repository is meant to be used as the starting code for students that are learning to use the Lego EV3 Mindstorms robot + ev3dev with Python.<br><br>
 Some background information will be provided here with links to other documentation.  The assumption is that before
-you begin using this repository to learn ev3-python you first have setup your Lego Mindstorm EV3 with ev3dev as
-discussed in the **Background information**. Once all the setup is done (by an instructor before the clas begins) this repository can be used with students.  Here is the content used in this curriculum:
- - [Instructor pre-class setup](https://drive.google.com/open?id=1jNlT9JKff3p9TyrDQwF3XjakaLEp_ilD1wNaHr7c67o)
+you begin using this repository to learn the [python-ev3dev API](http://python-ev3dev.readthedocs.io/en/latest/) you first have setup your Lego Mindstorm EV3 with ev3dev as
+discussed in the **Background information** section below. Once all the [setup](https://drive.google.com/open?id=1jNlT9JKff3p9TyrDQwF3XjakaLEp_ilD1wNaHr7c67o) is done (typically done by an instructor before the class begins) this repository can be used with students.  Here is the content used in this curriculum:
   
   ### Introductory material
   Set up your computer to communicate with the EV3 robot and get an overview of the robot capabilities.
-  - [Installing PyCharm Professional](https://drive.google.com/open?id=1MXThtuT79o6_SmovrWtPNulhi423kdGGDxMsu7LZXt4)
+  - [Installing PyCharm Professional and Git](https://docs.google.com/document/d/1sB-CAunUbr8WZdkzgjOgXL9Z7kz6s5RAY-JBmSpdYiw/edit?usp=sharing)
   - [Robot Overview](https://drive.google.com/open?id=17xGhRQt3VTX3Ltg_2FE2_aC7nSCNqHZzLzyaS6N8Yb4)
-  - [Git Setup](https://drive.google.com/open?id=12pTxnipJExUwPePExfMmDJIu1Yi-nSzfA7sVh1mHTg4)
-  - [Connecting from PyCharm to EV3](https://drive.google.com/open?id=15cYiil-p30to6tcTKZdxGlgHFTFg8EivHJV6Z-Om64s)
+  - [Connecting from PyCharm to EV3](https://docs.google.com/presentation/d/1EySebm6YJJbmzc7ezgzcdSwi-SWyryYt4s1Z6u_Ghy8/edit?usp=sharing)
    
   ### Drive Motors
   Learn to move the robot around.  Movement is a good first step with mobile robotics.
@@ -41,10 +39,10 @@ discussed in the **Background information**. Once all the setup is done (by an i
 
 
 ## Background information
-Typically the EV3 is programmed with a block based programming language that is available for Windows and OS X. 
+Typically the EV3 is programmed with a block based programming language from Lego that is available for Windows and Mac.<br>
 https://www.lego.com/en-us/mindstorms/downloads/download-software
 
-There is also a lightweight version of that program available for iPad and Android tablets: 
+There is also a lightweight version of that program available for iPad and Android tablets.<br>
 https://www.lego.com/en-us/mindstorms/apps/ev3-programmer-app
 
 Block based languages are a great way to get started, but at some point in your programming journey, it's time to move
@@ -61,19 +59,19 @@ First we start with the operating system on the EV3 programming brick.  Instead 
 that ships with the EV3 from Lego we'll dual boot using an SD card. The new os is called **ev3dev** and it's based on Linux.
 http://www.ev3dev.org/
 
-ev3dev can use many different programming languages, not just Python. We only care about Python though.  In
-order to use Python we need to leverage a Python library, so that we have commands to communicate the the motors and 
-sensors on the board.  The built-in Python library that ships with ev3dev is called python-ev3dev.<br>
+ev3dev can use many different programming languages, not just Python. However, we only care about Python.  In
+order to use Python we need to leverage the ev3dev Python library, which is called python-ev3dev, so that we have commands to communicate with the motors and
+sensors on the board.  ev3dev ships with python-ev3dev already installed, so all we have to do is learn to use it.  You can learn the API from the official documentation:<br>
 Github: https://github.com/rhempel/ev3dev-lang-python
 <br>
 Documentation: http://python-ev3dev.readthedocs.io/en/latest/
 
-In order to use ev3dev with read the Getting Started page on ev3dev.org.
-http://www.ev3dev.org/docs/getting-started/
+but sometimes it's easier to learn from a series of examples.  That is the focus of this repository.  It is a series of exercises that you will work to learn the python-ev3dev API.
+After you work these exercises you should be able to come up with your own ideas that you can implement.
 
-Then for the robots we use at Rose-Hulman I did some additional customizations. Starting in 2016 we built a fleet of 10
-EV3 robots to use in our CSSE120 Introduction to Programming course at Rose-Hulman. Here is a doc which
-documents some Rose-Hulman specific work and our customizations. 
+### Background information specific to Rose-Hulman
+Starting in 2016 we built a fleet of 10 EV3 robots to use in our CSSE120 Introduction to Programming course at Rose-Hulman. The pilot program went well so in the Fall of 2017 we purchased 10 more robots. Here is a Google doc which
+shows the setup steps that the instructors did before the course began:<br>
 https://docs.google.com/document/d/1jNlT9JKff3p9TyrDQwF3XjakaLEp_ilD1wNaHr7c67o/edit?usp=sharing
 
 Once you have your robots setup and rockin you need material to teach students how to use the robot.  That is where
@@ -81,13 +79,12 @@ this repository begins.
 
 ## What is in this repository
 
-  The purpose of this repository is to share the work we’ve done at Rose-Hulman to use ev3dev in the classroom.  We’ve setup a series of exercises for students to learn the Python ev3dev API.  Instructors at other schools can use any amount of our content in their own course or simply review our work as inspiration.
+  The purpose of this repository is to share the work we’ve done at Rose-Hulman to use ev3dev in the classroom.  We’ve setup a series of exercises for students to learn the [python-ev3dev API](http://python-ev3dev.readthedocs.io/en/latest/).  Instructors at other schools can use any amount of our content in their own course or simply review our work as inspiration.
   
 This repository is broken into different folders that each have a different purpose:
 - `assets` - Sound and image files. These assets are used in various modules throughout the curriculum.
 - `examples` - Finished examples that can be run to demo different robot features. Reference the code in this folder when doing your own work. 
 - `libs` - A special folder that will contain modules that are available to all other modules. Students will be given an mqtt module and will be expected to build their own robot controller module.
-- `project` - This folder is for the course final project code. Students should create a self-selected project that demonstrates their understanding of ev3-python.  The goal is to have a little fun and have a little freedom to pick a project that is interesting to you.
 - `sandbox` - This folder has 5 subfolders that all start out identical.  Each identical subfolder is for 1 team member to work individually while learning ev3dev. This folder contains 24 individual programming challenges that you will work as you complete this curriculum.
 
 ## Learning Objectives
