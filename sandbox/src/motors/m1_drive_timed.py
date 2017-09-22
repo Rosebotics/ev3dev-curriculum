@@ -14,7 +14,7 @@ Authors: David Fisher and PUT_YOUR_NAME_HERE.
 # TODO: 2. Get a yardstick or tape measure to do some testing with /examples/motors/drive_input_speed.py
 #   Have your whole team work this activity together.
 #   For your first test run drive_input_speed (via python drive_input_speed from that folder using SSH).
-#   Enter these values for your first test and record the distance below.
+#   Enter these values for your first test and record the distance below as XXX for 100.
 #     Enter a speed for the left motor (0 to 900 dps): 100
 #     Enter a speed for the right motor (0 to 900 dps): 100
 #     Enter a time to drive (seconds): 10
@@ -59,6 +59,11 @@ Authors: David Fisher and PUT_YOUR_NAME_HERE.
 #     motor encoders, so just make a simple rough approximation here, since later we'll do it better in a different way.
 #
 # TODO: 3. Copy the content of the /examples/motors/drive_input_speed.py program and place it below these comments.
+#   Change the initial print and speak commands to reflect this module, like this...
+#    print("--------------------------------------------")
+#    print("  Timed Driving")
+#    print("--------------------------------------------")
+#    ev3.Sound.speak("Timed Driving").wait()
 # TODO: 4. Change the input questions from:
 #   Enter a speed for the left motor (0 to 900 dps):
 #   Enter a speed for the right motor (0 to 900 dps):
