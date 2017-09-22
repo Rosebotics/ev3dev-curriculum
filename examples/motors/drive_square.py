@@ -68,6 +68,7 @@ def drive(left_motor, right_motor, left_sp, right_sp):
 
 def shutdown(left_motor, right_motor):
     """Close the program"""
+    print("Goodbye!")
     left_motor.stop(stop_action="coast")
     right_motor.stop(stop_action="coast")
     ev3.Leds.set_color(ev3.Leds.LEFT, ev3.Leds.GREEN)

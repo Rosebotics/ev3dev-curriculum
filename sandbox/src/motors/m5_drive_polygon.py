@@ -42,6 +42,7 @@ def main():
         #
         # Observations you should make, by making library functions you can make this program in only 3 lines of code.
 
+    print("Goodbye!")
     ev3.Sound.speak("Goodbye").wait()
 
 
