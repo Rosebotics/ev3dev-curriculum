@@ -9,7 +9,7 @@ MQTT call to:
 
 When that message is received, it will update the rectangle that is displayed on the canvas to match the Pixy values.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """
 
 import tkinter

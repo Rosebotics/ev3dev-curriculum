@@ -31,7 +31,7 @@ communication.  Summary of the communication:
 
 Implement the TODOs below to complete this module.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 

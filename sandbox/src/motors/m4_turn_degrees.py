@@ -3,7 +3,7 @@ This module lets you extend what you have learned about driving and extend it to
 
 Much like you have a drive_inches command in your library, you will now make a turn_degrees method.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # TODO: 2. Create a method in your library called turn_degrees that receives the degrees_to_turn and turn_speed_sp

@@ -2,11 +2,9 @@
 """
 This module lets you practice EV3 drive motor commands using timed delays.
 
-Use input prompts to get the target speed (degrees per second) and desired number of inches from the user.
-Then make the EV3 drive a given number of inches at the target speed.  You will need to do some experiments
-to collect data, then make an equation to figure out the time needed given the distance and speed.
+Use input prompts to get the target speed (degrees per second) and desired time to drive from the user.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # TODO: 2. Get a yardstick or tape measure to do some testing with /examples/motors/drive_input_speed.py

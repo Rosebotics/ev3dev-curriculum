@@ -23,7 +23,7 @@ support drive and shutdown.
 
 Once the EV3 code is ready, run it on the EV3 you can work on the PC side code for the MQTT Remote Control.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """
 import mqtt_remote_method_calls as com
 import robot_controller as robo

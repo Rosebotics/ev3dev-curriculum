@@ -18,7 +18,7 @@ To restart the Brickman interface after you complete this problem type:
 sudo chvt 1
 Which will probably not require you to type the password since sudo was just run earlier.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import ev3dev.ev3 as ev3

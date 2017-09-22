@@ -5,7 +5,7 @@ This module contains code that needs to run on an EV3 (notice the filename).
 You shouldn't look at this code at all.  It's intentionally mysterious and that's part of the fun of this module.
 It's a puzzle you have to solve.  If you look at the code it'll give away the fun. :)
 
-Authors: David Fisher.  January 2017.
+Authors: David Fisher.
 """
 
 # TODO: 1. Have someone on your team run this module on the EV3.  It uses the screen on the EV3.  Whenever you want to

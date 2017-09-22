@@ -81,4 +81,3 @@ def pixy_example():
     print("value2: Y", pixy.value(2))
     print("value3: Width", pixy.value(3))
     print("value4: Height", pixy.value(4))
-

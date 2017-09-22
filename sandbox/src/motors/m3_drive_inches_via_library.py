@@ -4,7 +4,7 @@ This module lets you practice refactoring code to use a shared library.  The cod
 The team should work together and pick one team member to type code into libs/robot_controller.py to create a
 constructor and a method called drive_inches.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # TODO: 2. On your computer right click on the libs folder in PyCharm, select Mark Directory as... Sources Root
