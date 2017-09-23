@@ -17,7 +17,7 @@ MAX_SPEED = 900
 # TODO: 6. After you fix the bugs in the three arm movement commands demo your code to a TA or instructor.
 #
 # Observations you should make, the TouchSensor is trivially easy to use, but the motor commands are still a little bit
-#   tricky.
+#   tricky.  It is neat that the same motor API works for both the wheels and the arm.
 
 
 def main():
