@@ -26,7 +26,7 @@ Authors: David Fisher and PUT_YOUR_NAME_HERE.
 #       speed_sp=-turn_speed_sp and the right wheel to speed_sp=turn_speed_sp.
 #     To make right turns (negative degrees_to_turn values) use speed_sp=-turn_speed_sp on the right and
 #       speed_sp=turn_speed_sp on the left.
-#     Use the run_to_rel_pos, .wait_while("running") pattern to implement your work (not timed driving)
+#     Use the run_to_rel_pos, .wait_while(ev3.Motor.STATE_RUNNING) pattern to implement your work (not timed driving)
 #   You will have to experimentally determine the formula for accurate position_sp turn amounts.
 
 # TODO: 4. Individually implement the code here to use your turn_degrees library method.

@@ -68,8 +68,8 @@ def turn_90(left_motor, right_motor):
     left_motor.run_to_rel_pos(position_sp=motor_turns_deg, speed_sp=400)
     right_motor.run_to_rel_pos(position_sp=-motor_turns_deg, speed_sp=400)
     # Note, that there is no delay using the commands above, so we must wait
-    left_motor.wait_while("running")  # Wait for the turn to finish
-    right_motor.wait_while("running")  # Wait for the turn to finish
+    left_motor.wait_while(ev3.Motor.STATE_RUNNING)  # Wait for the turn to finish
+    right_motor.wait_while(ev3.Motor.STATE_RUNNING)  # Wait for the turn to finish
     ev3.Sound.beep().wait()  # Fun little beep
 
 
