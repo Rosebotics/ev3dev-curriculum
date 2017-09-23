@@ -111,43 +111,85 @@ def main():
 # IR Remote callbacks
 # ----------------------------------------------------------------------
 def handle_red_up_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.angry_eyes)
 
 
 def handle_red_down_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.puppy_dog_eyes)
 
 
 def handle_blue_up_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.sad_eyes)
 
 
 def handle_blue_down_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.shifty_eyes)
 
 
 def handle_red_up_2(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.progress_0)
 
 
 def handle_red_up_3(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.progress_50)
 
 
 def handle_red_up_4(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.progress_100)
 
@@ -156,7 +198,13 @@ def handle_red_up_4(button_state, dc):
 # Shutdown callback
 # ----------------------------------------------------------------------
 def handle_shutdown(button_state, dc):
-    """Exit the program."""
+    """
+    Exit the program.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         dc.running = False
 
@@ -165,9 +213,15 @@ def handle_shutdown(button_state, dc):
 # Helper Screen function for putting an image on the screen.
 # ----------------------------------------------------------------------
 def display_image(lcd_screen, image):
-    """Helper function to put an image on the screen.  All images used with this function should be full screen images.
-       The screen is 178 by 128 pixels.  In this module we're using ones that came from Lego that are full screen.
-       Smaller images can be used as well and the upper left corner does not always need to be 0, 0."""
+    """
+    Helper function to put an image on the screen.  All images used with this function should be full screen images.
+    The screen is 178 by 128 pixels.  In this module we're using ones that came from Lego that are full screen.
+    Smaller images can be used as well and the upper left corner does not always need to be 0, 0.
+
+    Type hints:
+      :type lcd_screen: ev3.Screen
+      :type image: Image
+    """
     lcd_screen.image.paste(image, (0, 0))
     lcd_screen.update()
 

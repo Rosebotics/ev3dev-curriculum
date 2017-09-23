@@ -61,7 +61,14 @@ def main():
 # Remote Control channel 1
 # ----------------------------------------------------------------------
 def handle_red_up_1(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Red up channel 1 is pressed")
     else:
@@ -69,7 +76,14 @@ def handle_red_up_1(button_state, robot, dc):
 
 
 def handle_red_down_1(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Red down channel 1 is pressed")
     else:
@@ -77,7 +91,14 @@ def handle_red_down_1(button_state, robot, dc):
 
 
 def handle_blue_up_1(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Blue up channel 1 is pressed")
     else:
@@ -85,7 +106,14 @@ def handle_blue_up_1(button_state, robot, dc):
 
 
 def handle_blue_down_1(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Blue down channel 1 is pressed")
     else:
@@ -96,7 +124,14 @@ def handle_blue_down_1(button_state, robot, dc):
 # Remote Control channel 2
 # ----------------------------------------------------------------------
 def handle_red_up_2(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Red up channel 2 is pressed")
     else:
@@ -104,7 +139,14 @@ def handle_red_up_2(button_state, robot, dc):
 
 
 def handle_red_down_2(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Red down channel 2 is pressed")
     else:
@@ -112,7 +154,14 @@ def handle_red_down_2(button_state, robot, dc):
 
 
 def handle_blue_up_2(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Blue up channel 2 is pressed")
     else:
@@ -120,7 +169,14 @@ def handle_blue_up_2(button_state, robot, dc):
 
 
 def handle_blue_down_2(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Blue down channel 2 is pressed")
     else:
@@ -131,7 +187,14 @@ def handle_blue_down_2(button_state, robot, dc):
 # Buttons
 # ----------------------------------------------------------------------
 def handle_up_button(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Up button is pressed")
     else:
@@ -139,7 +202,14 @@ def handle_up_button(button_state, robot, dc):
 
 
 def handle_down_button(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Down button is pressed")
     else:
@@ -147,7 +217,14 @@ def handle_down_button(button_state, robot, dc):
 
 
 def handle_left_button(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Left button is pressed")
     else:
@@ -155,7 +232,14 @@ def handle_left_button(button_state, robot, dc):
 
 
 def handle_right_button(button_state, robot, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR / button event.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         print("Right button is pressed")
     else:
@@ -163,10 +247,18 @@ def handle_right_button(button_state, robot, dc):
 
 
 def handle_shutdown(button_state, robot, dc):
-    """Exit the program using the robot shutdown command."""
+    """
+    Exit the program using the robot shutdown command.
+
+    Type hints:
+      :type button_state: bool
+      :type robot: robo.Snatch3r
+      :type dc: DataContainer
+    """
     if button_state:
         # robot.shutdown()  # To stop motors and turn on the GREEN leds.
         dc.running = False
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
