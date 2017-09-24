@@ -113,13 +113,13 @@ def left_mouse_click(event, mqtt_client):
     # All of your teammates should receive the message and create a circle of your color at your click location.
     # Additionally you will receive your own message and draw a circle in your color too.
 
-    # TODO 8: Help get everyone on your team running this program at the same time.
+    # TODO: 8. Help get everyone on your team running this program at the same time.
     # You should be able to see circles on your computer from everyone else on your team.
     # Try to draw the first letter of your name in circles. :)
 
-    # TODO 9: Call over a TA or instructor to sign your team's checkoff sheet.
+    # TODO: 9. Call over a TA or instructor to sign your team's checkoff sheet.
     #
-    # Observations you should make, with MQTT your team can here your messages.
+    # Observations you should make, with MQTT your team can hear your messages.
     # You published messages to the "legoXX/draw" topic (where XX is the number set in libs/mqtt_remote_method_calls.py)
     # You subscribed to messages for the "legoXX/draw" topic (so you are talking to yourself and others)
     # Later you'll publish messages to your EV3 and subscribe to messages that your EV3 sends.

@@ -5,7 +5,7 @@ to look at the code to see if you understand what is going on, but no changes ar
 
 See the m3_ev3_led_button_communication.py file for all the details.
 
-Authors: David Fisher.
+Author: David Fisher.
 """
 
 import tkinter
@@ -21,6 +21,7 @@ class MyDelegateOnThePc(object):
         self.display_label = label_to_display_messages_in
 
     def button_pressed(self, button_name):
+        print("Received: " + button_name)
         message_to_display = "{} was pressed.".format(button_name)
         self.display_label.configure(text=message_to_display)
 

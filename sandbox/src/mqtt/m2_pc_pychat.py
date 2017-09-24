@@ -23,12 +23,21 @@ class MyDelegate(object):
 
 def main():
     # TODO: 2. Set my_name and set team_member_name then try this program with that person.
-    my_name = "Dave"  # Used to set the topic that you are subscribed to listen to
-    team_member_name = "Dave"  # Used to set the topic that you will publish to
+    # For teams of 3 just have 2 people talk to each other and the other person can just watch this time.
+    my_name = "Dave"  # Used to set the topic that you are *subscribed to* listen to
+    team_member_name = "Dave"  # Used to set the topic that you will *publish to*
 
     # What happens if you set my_name and team_member_name to the same value?
     # The goal is simply for you to become more comfortable with how subscriptions and publish work with MQTT
     # Review the code to see if there are any other useful things you can learn.
+
+    # TODO: 3. Call over a TA or instructor to sign your team's checkoff sheet.
+    #
+    # Observations you should make:
+    # You published messages to "legoXX/{team_member_name}"  (where XX is set in libs/mqtt_remote_method_calls.py)
+    # You subscribed to messages for  "legoXX/{my_name}"
+    # So only MQTT clients listening for that name will hear, and you only hear messages sent to you.
+    # Later you'll publish messages to your EV3 and subscribe to messages that your EV3 sends.
 
     root = tkinter.Tk()
     root.title = "MQTT PyChat"
