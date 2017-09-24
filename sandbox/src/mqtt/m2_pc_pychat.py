@@ -59,7 +59,7 @@ def main():
     my_delegate = MyDelegate(chat_window)
     mqtt_client = com.MqttClient(my_delegate)
     mqtt_client.connect(my_name, team_member_name)
-    # mqtt_client.connect(my_name, team_member_name, "104.154.136.22")  # Off campus use EV3's IP address as broker
+    # mqtt_client.connect(my_name, team_member_name, "35.194.247.175")  # Off campus use EV3's IP address as broker
 
     root.mainloop()
 

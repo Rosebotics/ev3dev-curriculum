@@ -49,7 +49,7 @@ def main():
     my_delegate = MyDelegate()
     mqtt_client = com.MqttClient(my_delegate)
     mqtt_client.connect("topic_name", "topic_name")
-    # mqtt_client.connect("topic_name", "topic_name", "104.154.136.22")  # Off campus use EV3's IP address as broker
+    # mqtt_client.connect("topic_name", "topic_name", "35.194.247.175")  # Off campus use EV3's IP address as broker
 
     root.mainloop()
 

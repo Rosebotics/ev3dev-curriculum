@@ -14,11 +14,6 @@ MAX_SPEED = 900
 # TODO: 2. Have someone on your team run this program as is on the EV3 and make sure everyone understands the code.
 # Can you see what the robot does and explain what each line of code is doing? Talk as a group to make sure.
 
-# TODO: 6. After you fix the bugs in the three arm movement commands demo your code to a TA or instructor.
-#
-# Observations you should make, the TouchSensor is trivially easy to use, but the motor commands are still a little bit
-#   tricky.  It is neat that the same motor API works for both the wheels and the arm.
-
 
 def main():
     print("--------------------------------------------")
@@ -127,6 +122,11 @@ def arm_down(arm_motor):
     # Code that attempts to do this task but has bugs.  Fix them.
     arm_motor.run_to_abs_pos()
     arm_motor.wait_while(ev3.Motor.STATE_HOLDING)  # Blocks until the motor finishes running
+
+    # TODO: 6. After you fix the bugs in the three arm movement commands demo your code to a TA or instructor.
+    #
+    # Observations you should make, the TouchSensor is easy to use, but the motor commands are still a little bit
+    #   tricky.  It is neat that the same motor API works for both the wheels and the arm.
 
 
 # ----------------------------------------------------------------------
