@@ -126,7 +126,7 @@ def handle_button_press(button_state, mqtt_client, button_name):
 # Press the buttons on the EV3 (up, down, left, right) and watch the Tkinter GUI on your PC.
 # When done, press the Back button on EV3 to end that program and click Quit on the Tkinter GUI.
 
-# TODO: 6. Call over a TA or instructor to sign your team's checkoff sheet.
+# TODO: 6. Call over a TA or instructor to sign your team's checkoff sheet (demo both LEDs and buttons).
 #
 # Observations you should make, when communicating using MQTT there is always a program running on EV3 and on your PC
 #   at the same time.  To make your life easier, you only write one of those programs this time (the on on the EV3).
