@@ -136,23 +136,57 @@ class MqttClient(object):
     """Helper class to make it easier to work with MQTT subscriptions and publications."""
 
     def __init__(self, delegate=None):
+        """
+        Constructs the MQTT client and optionally connects a delegate object for message Rx.
+
+        Notice that the delegate is optional.
+        """
         self.client = mqtt.Client()
         self.delegate = delegate
         self.subscription_topic_name = None
         self.publish_topic_name = None
 
     def connect_to_ev3(self, mqtt_broker_ip_address="mosquitto.csse.rose-hulman.edu", lego_robot_number=LEGO_NUMBER):
-        """ Code running on the PC should use this command to connect to the EV3 robot.
-            Connects to the MQTT broker and begins listening for messages from the EV3. """
+        """
+        Code running on the PC should use this command to connect to the EV3 robot.
+        Connects to the MQTT broker and begins listening for messages from the EV3.
+
+        Notice that the mqtt_broker_ip_address and lego_robot_number are optional (usually not set).
+
+        Type hints:
+          :type mqtt_broker_ip_address: str
+          :type lego_robot_number: int
+        """
         self.connect("msg4pc", "msg4ev3", mqtt_broker_ip_address, lego_robot_number)
 
     def connect_to_pc(self, mqtt_broker_ip_address="mosquitto.csse.rose-hulman.edu", lego_robot_number=LEGO_NUMBER):
-        """ Code running on the EV3 should use this command to connect to the student PC.
-            Connects to the MQTT broker and begins listening for messages from the PC. """
+        """
+        Code running on the EV3 should use this command to connect to the student PC.
+        Connects to the MQTT broker and begins listening for messages from the PC.
+
+        Notice that the mqtt_broker_ip_address and lego_robot_number are optional (usually not set).
+
+        Type hints:
+          :type mqtt_broker_ip_address: str
+          :type lego_robot_number: int
+        """
         self.connect("msg4ev3", "msg4pc", mqtt_broker_ip_address, lego_robot_number)
 
     def connect(self, subscription_suffix, publish_suffix,
                 mqtt_broker_ip_address="mosquitto.csse.rose-hulman.edu", lego_robot_number=LEGO_NUMBER):
+        """
+        Connect this MQTT client to the broker, note that connect_to_ev3 and connect_to_pc call this method.
+        This connect method is the most generic allowing callers to set the subscription and publish topics.
+        The lego_robot number is added to both the subscription and publish topics (as shown in the code below).
+
+        Notice that the mqtt_broker_ip_address and lego_robot_number are optional (usually not set).
+
+        Type hints:
+          :type subscription_suffix: str
+          :type publish_suffix: str
+          :type mqtt_broker_ip_address: str
+          :type lego_robot_number: int
+        """
         lego_name = "lego" + str(lego_robot_number).zfill(2)
         self.subscription_topic_name = lego_name + "/" + subscription_suffix
         self.publish_topic_name = lego_name + "/" + publish_suffix
@@ -166,6 +200,18 @@ class MqttClient(object):
         self.client.loop_start()
 
     def send_message(self, function_name, parameter_list=None):
+        """
+        Sends a message to the MQTT broker using the publish_topic_name that was set by the connect method.
+
+        What comes in:
+          function_name: the name of the method that you want to call (as a string) on the other end's delegate
+          parameter_list: a List containing the arguments to that method call. Note: even single arguments should be
+                          placed into a list.  Also objects in the list will be transferred using json, so objects in
+                          the list must be serializable (int, float, string, etc all work fine but nothing fancy)
+        Type hints:
+          :type function_name:  str
+          :type parameter_list: list of object | None
+        """
         message_dict = {"type": function_name}
         if parameter_list:
             if isinstance(parameter_list, collections.Iterable):
@@ -230,6 +276,9 @@ class MqttClient(object):
             print("Attempt to call method {} which was not found.".format(message_type))
 
     def close(self):
+        """
+        Close the MQTT client (recommended of course, but does not seem to be required).
+        """
         self.delegate = None
         self.client.loop_stop()
         self.client.disconnect()

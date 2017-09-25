@@ -77,6 +77,7 @@ def guess(mqtt_client, number_to_guess_entry):
     # TODO: 5. Uncomment the line of code below to make guesses with EV3.
     # mqtt_client.send_message("guess", [int(number_to_guess_entry.get())])
     number_to_guess_entry.delete(0, 'end')
+    # Note: You can play the game with only TO DO 5 complete, but it will be easier to solve if you do TO DO 6 as well.
 
 
 def set_num_dice(mqtt_client, num_dice_entry):

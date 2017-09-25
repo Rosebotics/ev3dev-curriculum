@@ -80,7 +80,7 @@ def main():
     pc_delegate = MyDelegateOnThePc(button_message)
     mqtt_client = com.MqttClient(pc_delegate)
     mqtt_client.connect_to_ev3()
-    # mqtt_client.connect_to_ev3("35.194.247.175")  # Off campus use EV3's IP address as broker
+    # mqtt_client.connect_to_ev3("35.194.247.175")  # Off campus IP address of a GCP broker
 
     root.mainloop()
 
