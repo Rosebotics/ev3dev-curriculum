@@ -7,14 +7,17 @@ pause for a moment then just set the beacon back down so that you can test again
 So you need to build upon your program from the prior module and put the seek_beacon function into your Snatch3r class.
 
 Additionally within that function we would like for you to make 2 changes:
-  - If the beacon is not found due to the distance being 100, instead of stopping just spin slowly in place
+  - If the beacon is not found due to the distance being -128, instead of stopping just spin slowly in place to find it
   - If the beacon is not found due to the heading being greater than 10, instead of stopping just spin slowly in place
 Hopefully spinning slowly in place will help you find the beacon even if it starts behind you.
 
-The code below has no TODOS, your only changes will be in the Snatch3r class.  As always, pick one person from your team
+The code below has no TODOs, your only changes will be in the Snatch3r class.  As always, pick one person from your team
 to do the typing in your class, test it together, commit the work, then have everyone Git update to get the code.
 
-Authors: David Fisher.  February 2017.
+When complete call over a TA or instructor to sign your team's checkoff sheet.
+You can check off this part with a single successful run (sometimes it can be hard).
+
+Author: David Fisher.
 """
 import traceback
 
@@ -31,18 +34,19 @@ def main():
     ev3.Sound.speak("Beacon pickup").wait()
 
     #####################################################
-    # There are no TODOS in this code.
+    # There are no TODOs in this code.
     # Your only edits will be in the Snatch3r class.
     #####################################################
 
     robot = robo.Snatch3r()
     try:
         while True:
-            robot.seek_beacon()
-            ev3.Sound.speak("I got the beacon")
-            robot.arm_up()
-            time.sleep(1)
-            robot.arm_down()
+            found_beacon = robot.seek_beacon()
+            if found_beacon:
+                ev3.Sound.speak("I got the beacon")
+                robot.arm_up()
+                time.sleep(1)
+                robot.arm_down()
             command = input("Hit enter to seek the beacon again or enter q to quit: ")
             if command == "q":
                 break
@@ -50,7 +54,8 @@ def main():
         traceback.print_exc()
         ev3.Sound.speak("Error")
 
-    robot.shutdown()
+    print("Goodbye!")
+    ev3.Sound.speak("Goodbye").wait()
 
 
 # ----------------------------------------------------------------------

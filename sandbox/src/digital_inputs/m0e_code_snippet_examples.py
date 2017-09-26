@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Contains example code snippets used in the digital inputs lecture.  Don't try to actually run this file!  Just snippets.
+Contains example code snippets used in the drive motor lecture.  Don't try to actually run this file!
+These are just snippets used in the lecture, not actual code to run!
 
 TODO: 1. PASSIVELY LISTEN TO THE LECTURE ABOUT DIGITAL INPUTS (and a few other things)
 https://docs.google.com/presentation/d/1mUxsC-cUO4S5bwhTAQG0G10IO0gsbAU5YEORxeh0mMc/edit?usp=sharing
 
-Authors: David Fisher.  January 2017.
+Author: David Fisher
 """
 
 import ev3dev.ev3 as ev3

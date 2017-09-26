@@ -5,7 +5,7 @@ to look at the code to see if you understand what is going on, but no changes ar
 
 See the m3_ev3_led_button_communication.py file for all the details.
 
-Authors: David Fisher.  January 2017.
+Author: David Fisher.
 """
 
 import tkinter
@@ -21,6 +21,7 @@ class MyDelegateOnThePc(object):
         self.display_label = label_to_display_messages_in
 
     def button_pressed(self, button_name):
+        print("Received: " + button_name)
         message_to_display = "{} was pressed.".format(button_name)
         self.display_label.configure(text=message_to_display)
 
@@ -79,7 +80,7 @@ def main():
     pc_delegate = MyDelegateOnThePc(button_message)
     mqtt_client = com.MqttClient(pc_delegate)
     mqtt_client.connect_to_ev3()
-    # mqtt_client.connect_to_ev3("104.154.136.22")  # Off campus use EV3's IP address as broker
+    # mqtt_client.connect_to_ev3("35.194.247.175")  # Off campus IP address of a GCP broker
 
     root.mainloop()
 

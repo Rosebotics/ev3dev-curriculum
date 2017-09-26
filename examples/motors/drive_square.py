@@ -36,7 +36,14 @@ def main():
 
 
 def drive_straight(left_motor, right_motor, time_s):
-    """Shows an example of using run_forever at a given speed."""
+    """
+    Shows an example of using run_forever at a given speed.
+
+    Type hints:
+      :type left_motor: ev3.Motor
+      :type right_motor: ev3.Motor
+      :type time_s: float
+    """
     print("Driving straight...")
     left_motor.run_forever(speed_sp=400)
     right_motor.run_forever(speed_sp=400)
@@ -49,31 +56,53 @@ def drive_straight(left_motor, right_motor, time_s):
 
 
 def turn_90(left_motor, right_motor):
-    """Shows an example of using run_to_rel_pos at a given speed."""
+    """
+    Shows an example of using run_to_rel_pos at a given speed.
+
+    Type hints:
+      :type left_motor: ev3.Motor
+      :type right_motor: ev3.Motor
+    """
     print("Turning...")
     motor_turns_deg = 486  # May require some tuning depending on your surface!
     left_motor.run_to_rel_pos(position_sp=motor_turns_deg, speed_sp=400)
     right_motor.run_to_rel_pos(position_sp=-motor_turns_deg, speed_sp=400)
     # Note, that there is no delay using the commands above, so we must wait
-    left_motor.wait_while("running")  # Wait for the turn to finish
-    right_motor.wait_while("running")  # Wait for the turn to finish
+    left_motor.wait_while(ev3.Motor.STATE_RUNNING)  # Wait for the turn to finish
+    right_motor.wait_while(ev3.Motor.STATE_RUNNING)  # Wait for the turn to finish
     ev3.Sound.beep().wait()  # Fun little beep
 
 
 def drive(left_motor, right_motor, left_sp, right_sp):
-    """ Drive the robot forward at the given speeds"""
+    """
+    Drive the robot forward at the given speeds.
+
+    Type hints:
+      :type left_motor: ev3.Motor
+      :type right_motor: ev3.Motor
+      :type left_sp: int
+      :type right_sp: int
+    """
     left_motor.run_forever(speed_sp=left_sp)
     right_motor.run_forever(speed_sp=right_sp)
 
 
 def shutdown(left_motor, right_motor):
-    """Close the program"""
+    """
+    Close the program
+
+    Type hints:
+      :type left_motor: ev3.Motor
+      :type right_motor: ev3.Motor
+    """
+    print("Goodbye!")
     left_motor.stop(stop_action="coast")
     right_motor.stop(stop_action="coast")
     ev3.Leds.set_color(ev3.Leds.LEFT, ev3.Leds.GREEN)
     ev3.Leds.set_color(ev3.Leds.RIGHT, ev3.Leds.GREEN)
     ev3.Sound.speak("Goodbye").wait()
     exit()
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

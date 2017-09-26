@@ -9,7 +9,7 @@ MQTT call to:
 
 When that message is received, it will update the rectangle that is displayed on the canvas to match the Pixy values.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """
 
 import tkinter
@@ -51,7 +51,7 @@ def main():
     my_delegate = MyDelegate(canvas, rect_tag)
     mqtt_client = com.MqttClient(my_delegate)
     mqtt_client.connect_to_ev3()
-    # mqtt_client.connect_to_ev3("104.154.136.22")  # Off campus use EV3's IP address as broker
+    # mqtt_client.connect_to_ev3("35.194.247.175")  # Off campus IP address of a GCP broker
 
     root.mainloop()
 

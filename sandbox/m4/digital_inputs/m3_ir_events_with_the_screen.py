@@ -8,17 +8,20 @@ you are comfortable with the lambda syntax.
 Your task will be to display different images on the screen when certain IR buttons are pressed.  Working with the
 screen is easy if you use the `chmod +x m3_ir_events_with_the_screen.py` command, then run the program from the Brickman
 interface.  If you want to use SSH to run the program though you first need to stop the Brickman programming from
-running.  You can keep the Brickman UI program stopped until you complete this problem.
+running so that your screen images stay visible for more than 1 second.  You can keep the Brickman UI program stopped
+until you complete this problem.
 
 To stop the Brickman interface type:
-sudo chvt 6
+  sudo chvt 6
 When prompted for the password - C$$E120
 
 To restart the Brickman interface after you complete this problem type:
-sudo chvt 1
+  sudo chvt 1
 Which will probably not require you to type the password since sudo was just run earlier.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+BTW chvt means CHange the Virtual Terminal, and 86ing something means to kick it out.
+
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import ev3dev.ev3 as ev3
@@ -55,6 +58,7 @@ def main():
     print("--------------------------------------------")
     print(" IR Events with the Screen")
     print("--------------------------------------------")
+    print("Exit this program with the Back button.")
     # You will notice very few print commands in this module since this module uses the screen.
     # If you run Screen programs on the EV3 using Brickman, print commands go to that screen too which causes ugly
     # screen images. If you run Screen programs via SSH print commands work as expected.
@@ -66,9 +70,9 @@ def main():
     ev3.Sound.speak("I R events with the Screen").wait()
 
     # TODO: 3. Create a remote control object for channel 1. Add lambda callbacks for:
-    #   .on_red_up to call handle_red_up_1 (that exist already) with state and dc as parameters
-    #   .on_red_down to call handle_red_down_1 (that exist already) with state and dc as parameters
-    #   .on_blue_up to call handle_blue_up_1 (that exist already) with state and dc as parameters
+    #   .on_red_up    to call handle_red_up_1    (that exist already) with state and dc as parameters
+    #   .on_red_down  to call handle_red_down_1  (that exist already) with state and dc as parameters
+    #   .on_blue_up   to call handle_blue_up_1   (that exist already) with state and dc as parameters
     #   .on_blue_down to call handle_blue_down_1 (that exist already) with state and dc as parameters
 
     # TODO: 5. Create remote control objects for channels 2, 3, and 4. Add lambda callbacks for on_red_up to each one:
@@ -87,10 +91,16 @@ def main():
         # TODO: 6. Call the .process() method on your channel 2 - 4 RemoveControl objects and demo your code.
         #   Review the handle functions below to see how they draw to the screen.  They are already finished.
 
-        btn.process()
+        # TODO: 7. Call over a TA or instructor to sign your team's checkoff sheet and do a code review.
+        #
+        # Observations you should make, IR buttons work exactly like buttons on the EV3.
+        #   The screen is a bit annoying to work with due to the Brickman OS interference.
+        #   Note you could've run this program with Brickman too, but screen draws would last one 1 second each.
+
+        btn.process()  # Monitors for the Back button to exit the program if called.
         time.sleep(0.01)
 
-    # When the program completes (the user hit the back button), display a crying image and say goodbye.
+    # When the program completes (the user hit the Back button), display a crying image and say goodbye.
     display_image(dc.lcd_screen, dc.teary_eyes)
     ev3.Sound.speak("Goodbye").wait()
     print("If you ran via SSH and typed 'sudo chvt 6' earlier, don't forget to type")
@@ -101,43 +111,85 @@ def main():
 # IR Remote callbacks
 # ----------------------------------------------------------------------
 def handle_red_up_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.angry_eyes)
 
 
 def handle_red_down_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.puppy_dog_eyes)
 
 
 def handle_blue_up_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.sad_eyes)
 
 
 def handle_blue_down_1(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.shifty_eyes)
 
 
 def handle_red_up_2(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.progress_0)
 
 
 def handle_red_up_3(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.progress_50)
 
 
 def handle_red_up_4(button_state, dc):
-    """Handle IR / button event."""
+    """
+    Handle IR event.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         display_image(dc.lcd_screen, dc.progress_100)
 
@@ -146,7 +198,13 @@ def handle_red_up_4(button_state, dc):
 # Shutdown callback
 # ----------------------------------------------------------------------
 def handle_shutdown(button_state, dc):
-    """Exit the program."""
+    """
+    Exit the program.
+
+    Type hints:
+      :type button_state: bool
+      :type dc: DataContainer
+    """
     if button_state:
         dc.running = False
 
@@ -155,11 +213,18 @@ def handle_shutdown(button_state, dc):
 # Helper Screen function for putting an image on the screen.
 # ----------------------------------------------------------------------
 def display_image(lcd_screen, image):
-    """Helper function to put an image on the screen.  All images used with this function should be full screen images.
-       The screen is 178 by 128 pixels.  In this module we're using ones that came from Lego that are full screen.
-       Smaller images can be used as well and the upper left corner does not always need to be 0, 0."""
+    """
+    Helper function to put an image on the screen.  All images used with this function should be full screen images.
+    The screen is 178 by 128 pixels.  In this module we're using ones that came from Lego that are full screen.
+    Smaller images can be used as well and the upper left corner does not always need to be 0, 0.
+
+    Type hints:
+      :type lcd_screen: ev3.Screen
+      :type image: Image
+    """
     lcd_screen.image.paste(image, (0, 0))
     lcd_screen.update()
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

@@ -85,7 +85,9 @@ This repository is broken into different folders that each have a different purp
 - `assets` - Sound and image files. These assets are used in various modules throughout the curriculum.
 - `examples` - Finished examples that can be run to demo different robot features. Reference the code in this folder when doing your own work. 
 - `libs` - A special folder that will contain modules that are available to all other modules. Students will be given an mqtt module and will be expected to build their own robot controller module.
+- `projects` - This folder is currently blank. Each team member needs to make a folder in the projects area for their final project code.
 - `sandbox` - This folder has 5 subfolders that all start out identical.  Each identical subfolder is for 1 team member to work individually while learning ev3dev. This folder contains 24 individual programming challenges that you will work as you complete this curriculum.
+
 
 ## Learning Objectives
 At the end of this curriculum a student should be able to…

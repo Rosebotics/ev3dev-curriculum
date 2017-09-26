@@ -22,6 +22,7 @@ def main():
     print(" Beep at hands")
     print("--------------------------------------------")
     ev3.Sound.speak("Beep at hands")
+    print("Press the touch sensor to exit this program.")
 
     robot = robo.Snatch3r()
     # Note, it is assumed that you have a touch_sensor property on the Snatch3r class.
@@ -35,12 +36,14 @@ def main():
         #   assert self.ir_sensor
         # Then here you can use a command like robot.ir_sensor.proximity
 
-
-
-
         time.sleep(0.1)
 
-    robot.shutdown()
+    # TODO: 3. Call over a TA or instructor to sign your team's checkoff sheet.
+    #
+    # Observations you should make, the instance variable robot.ir_sensor.proximity is always updating with a distance.
+
+    print("Goodbye!")
+    ev3.Sound.speak("Goodbye").wait()
 
 
 # ----------------------------------------------------------------------

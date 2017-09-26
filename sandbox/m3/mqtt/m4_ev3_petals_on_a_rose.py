@@ -5,17 +5,21 @@ This module contains code that needs to run on an EV3 (notice the filename).
 You shouldn't look at this code at all.  It's intentionally mysterious and that's part of the fun of this module.
 It's a puzzle you have to solve.  If you look at the code it'll give away the fun. :)
 
-Authors: David Fisher.  January 2017.
+All of your coding will be done within m4_pc_petals_on_a_rose.py, open that file.
+
+Author: David Fisher.
 """
 
 # TODO: 1. Have someone on your team run this module on the EV3.  It uses the screen on the EV3.  Whenever you want to
 # use the screen you can't just run it via SSH like normal.  You instead have 2 options:
-#  chmod +x this file on the EV3 then run it via Brickman
+#  chmod +x this file on the EV3 by using the SSH command chmod +x m4_e (hit tab for the rest), then run it via Brickman
 #  Temporarily stop Brickman while working on this module, then resume Brickman once complete.
 #  Stop via       sudo chvt 6
 #  Restart later  sudo chvt 1
-# Personally I prefer to stop Brickman and use SSH but either option works.
-# Once the program is running on EV3 open m4_pc_petals_on_a_rose.py (the file you will write).
+# Personally I prefer to stop Brickman and use SSH but either option works.  By doing it the chvt way you get some logs.
+#
+# Once the program m4_ev3_petals_on_a_rose.py is running on EV3, open m4_pc_petals_on_a_rose.py.
+# Don't look at any other code in this file (that's cheating in this game).
 
 import ev3dev.ev3 as ev3
 import time
@@ -97,6 +101,8 @@ class GameMaster(object):
                     ev3.Sound.speak("Correct. You win!").wait()
                     ev3.Sound.play("/home/robot/csse120/assets/sounds/awesome_pcm.wav").wait()
                     print("Great work! Now let's make the game a bit harder. :)")
+                    self.mqtt_client.send_message("guess_response", ["You are done! You can get your checkoff!"])
+                    self.mqtt_client.send_message("guess_response", ["Optional: You can now play with more dots. :)"])
                     self.max_die_value = 9  # Make the game a little harder now.
                     self.consecutive_correct = 0
                 else:
@@ -111,7 +117,7 @@ class GameMaster(object):
                                                   number_guessed)])
                 ev3.Sound.speak("Correct, but only {} dice.".format(self.num_active_dice))
         else:
-            too_high_or_too_low = "too high" if number_guessed > correct_answer else "too low"
+            too_high_or_too_low = "Too high" if number_guessed > correct_answer else "Too low"
             self.mqtt_client.send_message("guess_response",
                                           ["Your guess of {} was {}. The correct answer for {} is {}".format(
                                               number_guessed, too_high_or_too_low, self.dice_values, correct_answer)])
@@ -140,9 +146,14 @@ def main():
     mqtt_client = com.MqttClient(my_delegate)
     my_delegate.mqtt_client = mqtt_client
     mqtt_client.connect_to_pc()
-    # mqtt_client.connect_to_pc("localhost")  # Off campus use EV3 as broker.
+    # mqtt_client.connect_to_pc("35.194.247.175")  # Off campus use EV3 as broker.
     my_delegate.loop_forever()
-    print("Shutdown complete.")
+    teary_eyes = Image.open("/home/robot/csse120/assets/images/ev3_lego/eyes_tear.bmp")
+    my_delegate.lcd.image.paste(teary_eyes, (0, 0))
+    my_delegate.lcd.update()
+    print("If you ran via SSH and typed 'sudo chvt 6' earlier, don't forget to type")
+    print("'sudo chvt 1' to get Brickman back after you finish this program.")
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Contains example code snippets used in the drive motor lecture.  Don't try to actually run this file!  Just snippets.
+Contains example code snippets used in the drive motor lecture.  Don't try to actually run this file!
+These are just snippets used in the lecture, not actual code to run!
 
 TODO: 1. PASSIVELY LISTEN TO THE LECTURE ABOUT DRIVE MOTORS
 https://docs.google.com/presentation/d/1rjkOZNw0mO0pH7Ovhy-7riYG3Xa4xq4rKbwMPhDppJs/edit#slide=id.g2e200109_1_0
 
-Authors: David Fisher.  January 2017.
+Author: David Fisher
 """
 
 import ev3dev.ev3 as ev3
@@ -47,8 +48,8 @@ def turn_90(left_motor, right_motor):
     right_motor.run_to_rel_pos(position_sp=-motor_turns_deg, speed_sp=400)
 
     # Note, that there is no delay using the motor movement commands, so we must block code execution.
-    left_motor.wait_while("running")  # Wait for the turn to finish
-    right_motor.wait_while("running")  # Wait for the turn to finish
+    left_motor.wait_while(ev3.Motor.STATE_RUNNING)  # Wait for the turn to finish
+    right_motor.wait_while(ev3.Motor.STATE_RUNNING)  # Wait for the turn to finish
 
     ev3.Sound.beep().wait()  # Make sure beep happens AFTER the motors stop.
 

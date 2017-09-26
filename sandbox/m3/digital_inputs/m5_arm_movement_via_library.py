@@ -1,17 +1,18 @@
 # !/usr/bin/env python3
 """
-This module lets you integrate your work on drive_inches and turn_degrees into a neat application.
+Time to move your arm movement functions into your Snatch3r robot library.
 
-You will ask the user for how many sides they would like in their polygon, the length of each side, and a speed.
-Then your robot will drive that polygon shape.
+This module will work exactly the same as the prior module but will do that work via your robot library.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # TODO: 2. Have everyone talk about this problem together then pick one team member to modify libs/robot_controller.py
 # as necessary to make the code below perform the same task as the prior module. Once the code has been tested and shown
 # to work, then have that person commit their work.  All other team members need to do a VCS --> Update project...
 # Once the library is implemented each team member should be able to run their version of this code on the robot.
+
+# TODO: 3. Call over a TA or instructor to sign your team's checkoff sheet and do a code review of your library.
 #
 # Observations you should make, you are a TEAM and making great library methods will make life easier for everyone.
 

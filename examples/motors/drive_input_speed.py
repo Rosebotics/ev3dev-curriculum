@@ -31,7 +31,9 @@ def main():
         time.sleep(time_s)
         left_motor.stop()
         right_motor.stop(stop_action="brake")
+    print("Goodbye!")
     ev3.Sound.speak("Goodbye").wait()
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

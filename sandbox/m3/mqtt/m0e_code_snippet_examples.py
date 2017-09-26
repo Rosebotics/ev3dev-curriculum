@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Contains example code snippets used in the MQTT lecture.  Don't try to actually run this file!  Just snippets.
+Contains example code snippets used in the drive motor lecture.  Don't try to actually run this file!
+These are just snippets used in the lecture, not actual code to run!
 
 TODO: 1. PASSIVELY LISTEN TO THE LECTURE ABOUT MQTT
 https://docs.google.com/presentation/d/1gQt1K4X2xzcspKMn2S0X98vhzVNmLA-xoQe5rp58CVE/edit?usp=sharing
 
-Authors: David Fisher.  January 2017.
+Author: David Fisher
 """
 
 import ev3dev.ev3 as ev3

@@ -6,23 +6,23 @@ Only the Tkinter GUI has been made for you.  You will need to implement all of t
 have a program running on your computer that can control the EV3.
 
 You will need to have the following features:
-  - Clickable drive direction buttons to drive forward (up), backwards (down), left, right, and stop (space)
-    - Keyboard shortcut keys that behave the same as clicking the buttons (this has already been wired up for you)
-  - An entry box for the left and right drive motor speeds.
-    - If both become set to 900 all of the drive direction buttons will go fast, for example forward goes 900 900
-    - If both become set to 300 all of the drive direction buttons will go slower, for example reverse goes -300 -300
-    - If to 500 then left does -500 500, which causes the robot to spin left (can also use half speed -250 250 if fast)
-    - If set differently to say 600 left, 300 right the robot will drive and arc, for example forward goes 600 300
-  - In addition to the drive features there needs to be a clickable button for Arm Up and Arm Down
-    - There also need to be keyboard shortcut for Arm Up (u) and Arm Down (j).  Arm calibration is not required.
+  -- Clickable drive direction buttons to drive forward (up), backwards (down), left, right, and stop (space)
+    -- Keyboard shortcut keys that behave the same as clicking the buttons (this has already been wired up for you)
+  -- An entry box for the left and right drive motor speeds.
+    -- If both become set to 900 all of the drive direction buttons will go fast, for example forward goes 900 900
+    -- If both become set to 300 all of the drive direction buttons will go slower, for example reverse goes -300 -300
+    -- If 500 then left does -500 500, which causes the robot to spin left (use half speed -250 250 if too fast)
+    -- If set differently to say 600 left, 300 right the robot will drive and arc, for example forward goes 600 300
+  -- In addition to the drive features there needs to be a clickable button for Arm Up and Arm Down
+    -- There also need to be keyboard shortcut for Arm Up (u) and Arm Down (j).  Arm calibration is not required.
 
-  - Finally you need 2 buttons for ending your program:
-    - Quit, which stops only this program and allows the EV3 program to keep running
-    - Exit, which sends a shutdown message to the EV3 then ends it's own program as well.
+  -- Finally you need 2 buttons for ending your program:
+    -- Quit, which stops only this program and allows the EV3 program to keep running
+    -- Exit, which sends a shutdown message to the EV3, then ends it's own program as well.
 
 You can start by running the code to see the GUI, but don't expect button clicks to do anything useful yet.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import tkinter
@@ -54,35 +54,33 @@ def main():
     right_speed_entry.insert(0, "600")
     right_speed_entry.grid(row=1, column=2)
 
+    # TODO: 3. Implement the callbacks for the drive buttons. Set both the click and shortcut key callbacks.
+    #
+    # To help get you started the arm up and down buttons have been implemented.
+    # You need to implement the five drive buttons.  One has been writen below to help get you started but is commented
+    # out. You will need to change some_callback1 to some better name, then pattern match for other button / key combos.
+
     forward_button = ttk.Button(main_frame, text="Forward")
     forward_button.grid(row=2, column=1)
-    # TODO: 3. Implement the callbacks for the drive buttons. Set both the click and shortcut key callbacks.
+    # forward_button and '<Up>' key is done for your here...
     # forward_button['command'] = lambda: some_callback1(mqtt_client, left_speed_entry, right_speed_entry)
-    # root.bind('<Up>', lambda event: same_callback_as_above1(mqtt_client, left_speed_entry, right_speed_entry))
-
+    # root.bind('<Up>', lambda event: some_callback1(mqtt_client, left_speed_entry, right_speed_entry))
 
     left_button = ttk.Button(main_frame, text="Left")
     left_button.grid(row=3, column=0)
-    # left_button['command'] = lambda: some_callback2(mqtt_client, left_speed_entry, right_speed_entry)
-    # root.bind('<Left>', lambda event: same_callback_as_above2(mqtt_client, left_speed_entry, right_speed_entry))
-
+    # left_button and '<Left>' key
 
     stop_button = ttk.Button(main_frame, text="Stop")
     stop_button.grid(row=3, column=1)
-    stop_button['command'] = lambda: send_stop(mqtt_client)
-    root.bind('<space>', lambda event: send_stop(mqtt_client))
+    # stop_button and '<space>' key (note, does not need left_speed_entry, right_speed_entry)
 
     right_button = ttk.Button(main_frame, text="Right")
     right_button.grid(row=3, column=2)
-    # right_button['command'] = lambda: some_callback3(mqtt_client, left_speed_entry, right_speed_entry)
-    # root.bind('<Right>', lambda event: same_callback_as_above3(mqtt_client, left_speed_entry, right_speed_entry))
-
+    # right_button and '<Right>' key
 
     back_button = ttk.Button(main_frame, text="Back")
     back_button.grid(row=4, column=1)
-    # back_button['command'] = lambda: some_callback4(mqtt_client, left_speed_entry, right_speed_entry)
-    # root.bind('<Down>', lambda event: same_callback_as_above4(mqtt_client, left_speed_entry, right_speed_entry))
-
+    # back_button and '<Down>' key
 
     up_button = ttk.Button(main_frame, text="Up")
     up_button.grid(row=5, column=0)
@@ -111,13 +109,13 @@ def main():
 # ----------------------------------------------------------------------
 # TODO: 4. Implement the functions for the drive button callbacks.
 
+# TODO: 5. Call over a TA or instructor to sign your team's checkoff sheet and do a code review.  This is the final one!
+#
+# Observations you should make, you did basically this same program using the IR Remote, but your computer can be a
+# remote control that can do A LOT more than an IR Remote.  We are just doing the basics here.
 
 
-def send_stop(mqtt_client):
-    print("stop")
-    mqtt_client.send_message("stop")
-
-
+# Arm command callbacks
 def send_up(mqtt_client):
     print("arm_up")
     mqtt_client.send_message("arm_up")
@@ -128,12 +126,7 @@ def send_down(mqtt_client):
     mqtt_client.send_message("arm_down")
 
 
-# This is the optional method
-def send_turn_amount(mqtt_client, turn_amount):
-    print("turn_degrees", [turn_amount])
-    mqtt_client.send_message("turn_degrees", [turn_amount])
-
-
+# Quit and Exit button callbacks
 def quit_program(mqtt_client, shutdown_ev3):
     if shutdown_ev3:
         print("shutdown")

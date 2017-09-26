@@ -3,7 +3,7 @@ The goal for this module is to show that usually in our MQTT communication we wi
 that same recipient will be sending messages back to us.  This module also runs only on your PC and has very few todo
 items.  You will simply be setting your name and you will be selecting one person on your team to send messages to.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  January 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import tkinter
@@ -23,12 +23,21 @@ class MyDelegate(object):
 
 def main():
     # TODO: 2. Set my_name and set team_member_name then try this program with that person.
-    my_name = "Dave"  # Used to set the topic that you are subscribed to listen to
-    team_member_name = "Dave"  # Used to set the topic that you will publish to
+    # For teams of 3 just have 2 people talk to each other and the other person can just watch this time.
+    my_name = "Dave"  # Used to set the topic that you are *subscribed to* listen to
+    team_member_name = "Dave"  # Used to set the topic that you will *publish to*
 
     # What happens if you set my_name and team_member_name to the same value?
     # The goal is simply for you to become more comfortable with how subscriptions and publish work with MQTT
     # Review the code to see if there are any other useful things you can learn.
+
+    # TODO: 3. Call over a TA or instructor to sign your team's checkoff sheet.
+    #
+    # Observations you should make:
+    # You published messages to "legoXX/{team_member_name}"  (where XX is set in libs/mqtt_remote_method_calls.py)
+    # You subscribed to messages for  "legoXX/{my_name}"
+    # So only MQTT clients listening for that name will hear, and you only hear messages sent to you.
+    # Later you'll publish messages to your EV3 and subscribe to messages that your EV3 sends.
 
     root = tkinter.Tk()
     root.title = "MQTT PyChat"
@@ -59,7 +68,7 @@ def main():
     my_delegate = MyDelegate(chat_window)
     mqtt_client = com.MqttClient(my_delegate)
     mqtt_client.connect(my_name, team_member_name)
-    # mqtt_client.connect(my_name, team_member_name, "104.154.136.22")  # Off campus use EV3's IP address as broker
+    # mqtt_client.connect(my_name, team_member_name, "35.194.247.175")  # Off campus IP address of a GCP broker
 
     root.mainloop()
 

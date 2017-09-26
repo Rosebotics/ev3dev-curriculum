@@ -23,7 +23,8 @@ def main():
     print("--------------------------------------------")
     print(" Beep at blue")
     print("--------------------------------------------")
-    ev3.Sound.speak("Beep at blue")
+    ev3.Sound.speak("Beep at blue").wait()
+    print("Press the touch sensor to exit this program.")
 
     robot = robo.Snatch3r()
     robot.pixy.mode = "SIG1"
@@ -41,7 +42,8 @@ def main():
 
         time.sleep(0.1)
 
-    robot.shutdown()
+    print("Goodbye!")
+    ev3.Sound.speak("Goodbye").wait()
 
 
 # ----------------------------------------------------------------------
