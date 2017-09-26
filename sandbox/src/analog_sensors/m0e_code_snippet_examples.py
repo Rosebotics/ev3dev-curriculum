@@ -18,19 +18,19 @@ def color_sensor_color():
     color_sensor = ev3.ColorSensor()
 
     # Potential values of the color_sensor.color property
-    # 0: No color
-    # 1: Black
-    # 2: Blue
-    # 3: Green
-    # 4: Yellow
-    # 5: Red
-    # 6: White
-    # 7: Brown
+    #   ev3.ColorSensor.COLOR_NOCOLOR is the value 0
+    #   ev3.ColorSensor.COLOR_BLACK   is the value 1
+    #   ev3.ColorSensor.COLOR_BLUE    is the value 2
+    #   ev3.ColorSensor.COLOR_GREEN   is the value 3
+    #   ev3.ColorSensor.COLOR_YELLOW  is the value 4
+    #   ev3.ColorSensor.COLOR_RED     is the value 5
+    #   ev3.ColorSensor.COLOR_WHITE   is the value 6
+    #   ev3.ColorSensor.COLOR_BROWN   is the value 7
     # From http://python-ev3dev.readthedocs.io/en/latest/sensors.html#special-sensor-classes
 
     for _ in range(5):
         current_color = color_sensor.color
-        if current_color == 5:
+        if current_color == ev3.ColorSensor.COLOR_RED:
             ev3.Sound.speak("I see Red").wait()
         else:
             color_names = ["No color", "Black", "Blue", "Green", "Yellow", "Red", "White", "Brown"]
@@ -65,10 +65,9 @@ def ir_sensor_proximity():
     print(ir_sensor.proximity)  # To measure distance to a wall
 
     # To find the IR beacon (with the remote in beacon mode)
-    ir_sensor.mode = "IR-SEEK"
-    print("value0: Heading", ir_sensor.value(0))  # Assumes remote is set to channel 1
-    print("value1: Distance", ir_sensor.value(1))  # Assumes remote is set to channel 1
-    # See http://www.ev3dev.org/docs/sensors/lego-ev3-infrared-sensor/ for more values to read in IR-SEEK mode
+    beacon_seeker = ev3.BeaconSeeker()  # Assumes remote is set to channel 1
+    print("Heading", beacon_seeker.heading)
+    print("Distance", beacon_seeker.distance)
 
 
 def pixy_example():
