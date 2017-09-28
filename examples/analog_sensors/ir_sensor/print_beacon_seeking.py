@@ -9,7 +9,7 @@ To test this module, put the IR Remote into beacon mode by pressing the button a
 of the remote and making sure the green LED is on.  Use channel 1 for this module.  Move
 the beacon around and watch the values that are printed.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  February 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """
 
 import ev3dev.ev3 as ev3
@@ -24,15 +24,13 @@ def main():
     ev3.Sound.speak("Printing beacon seeking").wait()
 
     touch_sensor = ev3.TouchSensor()
-    ir_sensor = ev3.InfraredSensor()
+    beacon_seeker = ev3.BeaconSeeker()
     assert touch_sensor
-    assert ir_sensor
-
-    ir_sensor.mode = "IR-SEEK"
+    assert beacon_seeker
 
     while not touch_sensor.is_pressed:
-        current_heading = ir_sensor.value(0)
-        current_distance = ir_sensor.value(1)
+        current_heading = beacon_seeker.heading
+        current_distance = beacon_seeker.distance
         print("IR Heading = {}   Distance = {}".format(current_heading, current_distance))
         time.sleep(0.5)
 
