@@ -5,7 +5,7 @@ the robot so that it is always facing the color signature.  You will need to tea
 implement the code, then make the robot always face the color as you move it around.  The robot will only spin and never
 move forwards or backwards.
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  February 2017.
+Authors: David Fisher and PUT_YOUR_NAME_HERE.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import ev3dev.ev3 as ev3
@@ -17,7 +17,6 @@ import robot_controller as robo
 def main():
     print("--------------------------------------------")
     print(" Color tracking")
-    print(" Press the touch sensor to exit")
     print("--------------------------------------------")
     ev3.Sound.speak("Color tracking").wait()
     print("Press the touch sensor to exit this program.")
@@ -43,11 +42,16 @@ def main():
 
         time.sleep(0.25)
 
-    robot.shutdown()
+    print("Goodbye!")
+    ev3.Sound.speak("Goodbye").wait()
+
+# TODO: 4. Call over a TA or instructor to sign your team's checkoff sheet.
+#
+# Observations you should make, the Pixy cam could potentially be used for a lot of cool project ideas, but if you
+# decide to use the Pixy you should be aware of what it does well and what it doesn't do well.
 
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
 main()
-

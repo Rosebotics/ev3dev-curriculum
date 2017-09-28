@@ -10,6 +10,7 @@ import ev3dev.ev3 as ev3
 import time
 
 import robot_controller as robo
+import mqtt_remote_method_calls as com
 
 
 def main():
@@ -23,11 +24,8 @@ def main():
     # TODO: 2. Create an MqttClient (no delegate needed since EV3 will only send data, so an empty constructor is fine)
     # Then connect to the pc using the connect_to_pc method.
 
-
-
-
     robot = robo.Snatch3r()
-    # Add the pixy property to that Snatch3r class so that it is available in your library.
+    robot.pixy.mode = "SIG1"
 
     while not robot.touch_sensor.is_pressed:
 
@@ -45,6 +43,10 @@ def main():
     print("Goodbye!")
     ev3.Sound.speak("Goodbye").wait()
     mqtt_client.close()
+
+# TODO: 5. Call over a TA or instructor to sign your team's checkoff sheet.
+#
+# Observations you should make, if the EV3 has data the PC can know that data too using MQTT.
 
 
 # ----------------------------------------------------------------------
