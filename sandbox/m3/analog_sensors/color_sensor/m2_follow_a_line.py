@@ -66,7 +66,7 @@ def follow_the_line(robot, white_level, black_level):
     """
     The robot follows the black line until the touch sensor is pressed.
     You will need a black line track to test your code
-    When the touch sensor is pressed, line following ends and control is returned to main.
+    When the touch sensor is pressed, line following ends, the robot stops, and control is returned to main.
 
     Type hints:
       :type robot: robo.Snatch3r
@@ -78,6 +78,7 @@ def follow_the_line(robot, white_level, black_level):
     # should drive straight or turn to the right.  You will need to test and refine your code until it works well.
     # Optional extra - For a harder challenge could you drive on the black line and handle left or right turns?
 
+    robot.stop()
     ev3.Sound.speak("Done")
 
 
