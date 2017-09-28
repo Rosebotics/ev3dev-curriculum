@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
 This demo lets you see how to use an input prompt to test different drive speeds.
+
+Author: David Fisher.
 """
 
 import ev3dev.ev3 as ev3
@@ -31,6 +33,7 @@ def main():
         time.sleep(time_s)
         left_motor.stop()
         right_motor.stop(stop_action="brake")
+
     print("Goodbye!")
     ev3.Sound.speak("Goodbye").wait()
 

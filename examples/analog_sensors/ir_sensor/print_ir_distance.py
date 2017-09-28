@@ -6,7 +6,7 @@ To test this module run it, place the IR Sensor at 0 cm on your ruler, then hold
 sheet of paper some distance away.  Watch the values print as you move the paper closer and
 farther away.  How well do the values match the number of centimeters away?
 
-Authors: David Fisher and PUT_YOUR_NAME_HERE.  February 2017.
+Authors: David Fisher.
 """
 
 import ev3dev.ev3 as ev3
@@ -16,9 +16,9 @@ import time
 def main():
     print("--------------------------------------------")
     print(" Printing distances")
-    print(" Press the touch sensor to exit")
     print("--------------------------------------------")
     ev3.Sound.speak("Printing distance").wait()
+    print(" Press the touch sensor to exit")
 
     touch_sensor = ev3.TouchSensor()
     ir_sensor = ev3.InfraredSensor()
@@ -30,7 +30,8 @@ def main():
         print("IR Distance = {}".format(current_proximity))
         time.sleep(0.5)
 
-    ev3.Sound.speak("Goodbye")
+    print("Goodbye!")
+    ev3.Sound.speak("Goodbye").wait()
 
 
 # ----------------------------------------------------------------------

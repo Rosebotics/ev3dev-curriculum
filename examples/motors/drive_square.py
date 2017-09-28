@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-  Drives the EV3 in a square.
+Drives the EV3 in a square (the accuracy of the 90 degree turns will vary by surface type).
+Demo video: https://goo.gl/photos/vrrSnLUvx8mSGCvZ6
 
-  Demo video: https://goo.gl/photos/vrrSnLUvx8mSGCvZ6
+Author: David Fisher.
 """
 
 import ev3dev.ev3 as ev3
@@ -24,7 +25,7 @@ def main():
     assert right_motor.connected
 
     # Displays a list of commands for a motor
-    print(left_motor.commands)
+    print("Motor commands:", left_motor.commands)
 
     # Drive in a square
     edge_length_drive_time_s = 6.0
@@ -42,7 +43,7 @@ def drive_straight(left_motor, right_motor, time_s):
     Type hints:
       :type left_motor: ev3.Motor
       :type right_motor: ev3.Motor
-      :type time_s: float
+      :type time_s: int | float
     """
     print("Driving straight...")
     left_motor.run_forever(speed_sp=400)

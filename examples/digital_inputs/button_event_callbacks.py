@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-  This module prints messages when buttons on the IR remote or the EV3 primary buttons are pressed and released.
-  Copying the boilerplate code can save you a lot of typing if using buttons in your own projects.
+This module prints messages when buttons on the IR remote or the EV3 primary buttons are pressed and released.
+Copying the boilerplate code can save you a lot of typing if using buttons in your own projects.
+
+Author: David Fisher.
 """
 
 import ev3dev.ev3 as ev3

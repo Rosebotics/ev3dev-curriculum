@@ -65,6 +65,7 @@ def quit_program(mqtt_client):
     print("Closed connection")
     exit()
 
+
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-Simple example of using LED syntax and the Touch Sensor.
+Example of using LED syntax and the Touch Sensor.  Also a fun little robot countdown.
+
+Author: David Fisher.
 """
 
 import ev3dev.ev3 as ev3
@@ -25,10 +27,11 @@ def main():
             ev3.Leds.set_color(ev3.Leds.LEFT, ev3.Leds.GREEN)
             ev3.Leds.set_color(ev3.Leds.RIGHT, ev3.Leds.BLACK)
         if k % 10 == 0:
-            ev3.Sound.speak(10 - (k // 10))
+            ev3.Sound.speak(10 - (k // 10)).wait()
 
     ev3.Leds.all_off()
 
+    print("Goodbye")
     ev3.Sound.speak("Goodbye").wait()
     ev3.Leds.set_color(ev3.Leds.LEFT, ev3.Leds.GREEN)
     ev3.Leds.set_color(ev3.Leds.RIGHT, ev3.Leds.GREEN)
