@@ -77,8 +77,8 @@
   Notice that when passing only 1 parameter it still had to be a list.
 
   And finally we'll mention that on the EV3 the object passed in to the MqttClient does NOT have
-  to be the robot object.  The most common development pattern for larger project is to use a
-  DIFFERENT object (not the robot object) as the delegate for MQTT callback.  For example:
+  to be the robot object.  The most common development pattern for larger projects is to use a
+  DIFFERENT object (not the robot object) as the delegate for MQTT callbacks.  For example:
 
   Code running on the EV3:
     class MyDelegate(object):
@@ -92,12 +92,11 @@
 
         def something_else(self):
             print("Do something interesting")
-            m1.do_task1(self.robot, self.mqtt_client)
+            do_crazy_task(self.robot, self.mqtt_client)
 
         def loop_forever(self):
             btn = ev3.Button()
             while not btn.backspace:
-                // do stuff
                 time.sleep(0.01)
             if self.mqtt_client:
                 self.mqtt_client.close()

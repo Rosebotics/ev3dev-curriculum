@@ -21,12 +21,20 @@ import mqtt_remote_method_calls as com
 
 
 class MyDelegate(object):
+    """ An instance of this class will be used to process MQTT messages that are received."""
 
     def print_message(self, message):
+        """
+        Prints the message argument.
+
+        Type hints:
+          :type message: str
+        """
         print("Message received:", message)
 
 
 def main():
+    """Creates the Tkinter GUI and connects to the MQTT broker."""
     root = tkinter.Tk()
     root.title = "MQTT Talking to yourself"
 
@@ -43,7 +51,7 @@ def main():
 
     q_button = ttk.Button(main_frame, text="Quit")
     q_button.grid(row=1, column=2)
-    q_button['command'] = (lambda: quit_program(mqtt_client))
+    q_button['command'] = lambda: quit_program(mqtt_client)
 
     # Create an MQTT connection
     my_delegate = MyDelegate()
