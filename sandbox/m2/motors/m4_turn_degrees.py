@@ -22,10 +22,12 @@ Authors: David Fisher and PUT_YOUR_NAME_HERE.
 #   Develop your code as a team within the robot_controller.py file and make sure all team member understand it.
 #   MAKE SOMEONE DIFFERENT TYPE!  You may not allow the same person to type that typed the drive_inches method.
 #   In that library method:
-#     To make a left turn (positive degrees_to_turn values) at a given turn_speed_sp set the left wheel to
-#       speed_sp=-turn_speed_sp and the right wheel to speed_sp=turn_speed_sp.
-#     To make right turns (negative degrees_to_turn values) use speed_sp=-turn_speed_sp on the right and
-#       speed_sp=turn_speed_sp on the left.
+#     To make a left turn (positive degrees_to_turn values) at a given turn_speed_sp, set the left wheel to
+#       position_sp=-degrees_to_turn and the right wheel to position_sp=degrees_to_turn,
+#       both speed_sp values can be set to turn_speed_sp (no negatives required).
+#     To make right turns (negative degrees_to_turn values) at a given turn_speed_sp, set the left wheel to
+#       position_sp=degrees_to_turn and the right wheel to position_sp=-degrees_to_turn,
+#       both speed_sp values can be set to turn_speed_sp (no negatives required).
 #     Use the run_to_rel_pos, .wait_while(ev3.Motor.STATE_RUNNING) pattern to implement your work (not timed driving)
 #   You will have to experimentally determine the formula for accurate position_sp turn amounts.
 
